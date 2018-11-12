@@ -2327,3 +2327,20 @@ class SmartCash(Coin):
     def header_hash(cls, header):
         '''Given a header return the hash.'''
         return cls.HEADER_HASH(header)
+
+class BitcoinFinal(Coin):
+    NAME = "BitcoinFinal"
+    SHORTNAME = "BTCF"
+    NET = "mainnet"
+    XPUB_VERBYTES = bytes.fromhex("043587CF")
+    XPRV_VERBYTES = bytes.fromhex("04358394")
+    P2PKH_VERBYTE = bytes.fromhex("19")
+    P2SH_VERBYTES = [bytes.fromhex("85")]
+    WIF_BYTE = bytes.fromhex("99")
+    GENESIS_HASH = ('00009ea6784c84c13c4a0647da103b29'
+                    '6a6cb6c8d386dfbd003062d53a60494a')
+    DESERIALIZER = lib_tx.DeserializerSegWit
+    TX_COUNT = 330000
+    TX_COUNT_HEIGHT = 149158
+    TX_PER_BLOCK = 2
+    RPC_PORT = 20501
